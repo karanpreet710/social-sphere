@@ -21,7 +21,7 @@ function Register() {
   const handleClick = async e => {
     e.preventDefault();
     try{
-      await axios.post("http://localhost:5000/api/auth/register",inputs)
+      await axios.post("https://socialsphere-backend.onrender.com/api/auth/register",inputs)
     }catch(err){
       setErr(err.response.data);
     }

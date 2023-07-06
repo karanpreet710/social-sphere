@@ -9,7 +9,7 @@ export const AuthContextProvider = ({ children }) => {
   );
 
   const login = async (inputs) => {
-    const res = await axios.post("http://localhost:5000/api/auth/login",inputs,{
+    const res = await axios.post("https://socialsphere-backend.onrender.com/api/auth/login",inputs,{
       withCredentials: true
     });
     setCurrentUser(res.data);

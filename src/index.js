@@ -6,7 +6,7 @@ import { DarkModeContextProvider } from './context/darkModeContext';
 import { AuthContextProvider } from './context/authContext';
 import {disableReactDevTools} from '@fvilers/disable-react-devtools';
 
-if(process.env.NODE_ENV === 'production') disableReactDevTools()
+if(process.env.NODE_ENV === 'production') disableReactDevTools
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
