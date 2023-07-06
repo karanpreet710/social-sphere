@@ -3,6 +3,7 @@ import "./posts.scss";
 import { useQuery } from "react-query";
 import {makeRequest} from "../../axios";
 import { useContext } from "react";
+import { AuthContext } from "../../context/authContext";
 
 const Posts = () => {
 
