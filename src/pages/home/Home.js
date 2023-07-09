@@ -11,7 +11,7 @@ const Home = () => {
     <div className="home">
       <Stories />
       <Share />
-      <Posts userId = {currentUser}/>
+      <Posts userId = {currentUser.id}/>
     </div>
   )
 }
