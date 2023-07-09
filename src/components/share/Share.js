@@ -15,6 +15,7 @@ const Share = () => {
       const formData = new FormData();
       formData.append("file", file);
       const {secure_url} = await makeRequest.post("/upload", formData);
+      console.log(secure_url, secure_url.length);
       return secure_url;
     } catch (err) {
       console.log(err);
