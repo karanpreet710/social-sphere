@@ -2,15 +2,11 @@ import Post from "../post/Post";
 import "./posts.scss";
 import { useQuery } from "react-query";
 import {makeRequest} from "../../axios";
-import { useContext } from "react";
-import { AuthContext } from "../../context/authContext";
 
-const Posts = () => {
-
-  const {currentUser} = useContext(AuthContext);
+const Posts = ({userId}) => {
 
   const {isLoading, error, data} = useQuery('posts',()=>
-    makeRequest.get("/posts?userId=" + currentUser.id).then((res)=>{
+    makeRequest.get("/posts?userId=" + userId.id).then((res)=>{
       return res.data; 
     })
   )
