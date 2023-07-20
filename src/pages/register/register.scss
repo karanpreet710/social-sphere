@@ -1,87 +1,55 @@
 .register {
-    height: 100vh;
-    background-color: rgb(193, 190, 255);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
     .card {
-      width: 60%;
-      display: flex;
-      flex-direction: row-reverse;
-      background-color: white;
+      margin: auto;
+      width: 30%;
+      height: 65%;
       border-radius: 10px;
-      min-height: 200px;
-      overflow: hidden;
-  
-      .left {
-        flex: 1;
-        background: linear-gradient(rgba(39, 11, 96, 0.5), rgba(39, 11, 96, 0.5)),
-          url("https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600")
-            center;
-        background-size: cover;
-        padding: 40px;
+      background-color: themed("bg");
+      padding: 20px;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      -webkit-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+      -moz-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+      box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+      position: relative;
+
+      h1 {
+      margin-bottom: 0px;
+      margin-top: 0px;
+      }
+      
+      form {
         display: flex;
         flex-direction: column;
         gap: 20px;
-        color: white;
-  
-        h1 {
-          font-size: 80px;
-          line-height: 80px;
-        }
+        margin-top: 10px;
         
-        p {
-            margin-bottom: 20px;
-        }
-  
-        span {
-          font-size: 12px;
+        input {
+        border: 1px solid lightgray;
+        border-radius: 10px;
+        padding: 15px 10px;
         }
         
         button {
           width: 40%;
           padding: 8px;
           border: none;
-          background-color: white;
-          color: rebeccapurple;
+          background-color: #938eef;
+          color: white;
           font-weight: bold;
           cursor: pointer;
-        }
-      }
-  
-      .right {
-        flex: 1;
-        padding: 40px;
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        justify-content: center;
-  
-        h1 {
-        color: #555;
-        }
-        
-        form {
-          display: flex;
-          flex-direction: column;
-          gap: 20px;
-          
-          input {
-          border: none;
-          border-bottom: 1px solid lightgray;
-          padding: 15px 5px;
-          }
-          
-          button {
-            width: 40%;
-            padding: 8px;
-            border: none;
-            background-color: #938eef;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-          }
         }
       }
     }

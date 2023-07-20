@@ -1,12 +1,13 @@
 .login {
     height: 100vh;
-    background-color: rgb(193, 190, 255);
+    // background-color: rgb(193, 190, 255);
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #000;
   
     .card {
-      width: 60%;
+      width: 70%;
       display: flex;
       background-color: white;
       border-radius: 10px;
@@ -15,28 +16,27 @@
   
       .left {
         flex: 1;
-        background: linear-gradient(rgba(39, 11, 96, 0.5), rgba(39, 11, 96, 0.5)),
-          url("https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600")
-            center;
-        background-size: cover;
         padding: 40px;
         display: flex;
-        flex-direction: column;
-        gap: 20px;
-        color: white;
+        flex-direction: column; 
+        justify-content: center;
+        margin: 20px;
+
+        .intro-wrapper{
+          display: flex;
+          align-items: center;
+          color: #4a3cef;
+          font-size: 40px;
+          font-weight: bold;
+
+          .type-wrapper{
+            margin-bottom: 8px;
+          }
+        }
   
-        h1 {
-          font-size: 70px;
-          line-height: 80px;
-          margin-bottom: 20px;
-        }
-        
-        p {
-        }
-  
-        span {
-          font-size: 12px;
-        }
+        // span {
+        //   font-size: 12px;
+        // }
         
         button {
           width: 50%;
@@ -51,12 +51,17 @@
   
       .right {
         flex: 1;
-        padding: 40px;
+        padding: 30px 20px;
         display: flex;
+        margin: 20px;
         flex-direction: column;
         gap: 40px;
         justify-content: center;
-  
+        border-radius: 20px;
+        border: 2px;
+        box-shadow:1px 1px 6px 4px #e3e3e3;
+        font-size: 20px;
+
         h1 {
         color: #555;
         }
@@ -67,19 +72,34 @@
           gap: 20px;
           
           input {
-          border: none;
-          border-bottom: 1px solid lightgray;
+          border: 1px solid lightgray;
+          border-radius: 10px;
           padding: 15px 5px;
           }
           
-          button {
-            width: 50%;
-            padding: 8px;
+          button { 
+            padding: 12px;
             border: none;
-            background-color: #938eef;
+            background-color: #4c3df6;
+            border-radius: 10px;
             color: white;
             font-weight: bold;
+            font-size: 15px;
             cursor: pointer;
+          }
+
+          h4 {
+            display: flex;
+            flex-direction: row;
+            margin: 10px;
+          }
+            
+          h4:before,
+          h4:after {
+              content: "";
+              flex: 1 1;
+              border-bottom: 2px solid #000;
+              margin: auto;
           }
         }
       }

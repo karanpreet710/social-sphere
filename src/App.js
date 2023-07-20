@@ -2,16 +2,15 @@ import LeftBar from "./components/leftBar/LeftBar";
 import Navbar from "./components/navbar/Navbar";
 import RightBar from "./components/rightBar/RightBar";
 import Login from "./pages/login/Login";
-import Register from "./pages/register/Register";
 import Home from "./pages/home/Home"
 import Profile from "./pages/profile/Profile"
+import Chatting from "./pages/chatting/Chatting"
 import "./style.scss"
 import { QueryClient, QueryClientProvider } from "react-query";
 
 import {
   createBrowserRouter,
   RouterProvider,
-  Route,
   Outlet,
   Navigate
 } from "react-router-dom";
@@ -75,8 +74,12 @@ function App() {
       element:<Login />
     },
     {
-      path:'/register',
-      element:<Register />
+      path:"/chat",
+      element:(
+        <ProtectedRoute>
+          <Chatting />
+        </ProtectedRoute>
+      )
     }
   ])
   return (
