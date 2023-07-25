@@ -8,7 +8,7 @@ function Message({message}) {
   const ref = useRef()
   useEffect(()=>{
     ref.current?.scrollIntoView({behavior:"smooth"})
-  },[message])
+  },[])
   return (
     <div key={message.id} ref={ref} className={message.userId===currentUser.id ? 'message owner' : 'message'}>
       <div className='messageInfo'>

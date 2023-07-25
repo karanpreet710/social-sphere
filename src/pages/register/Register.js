@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import "./register.scss"
-import { Link } from 'react-router-dom'
 import axios from 'axios'
 import CloseIcon from '@mui/icons-material/Close';
 

@@ -26,7 +26,7 @@ function Chatting() {
     socket.emit('joinRoom',rooms);
   }
   func()
-}, [currentUser.id, users]);
+}, []);
 
   const handleUserClick = (user) => {
     setSelectedUser(user);
@@ -35,9 +35,9 @@ function Chatting() {
   return (
     <div className='chatting'>
       <div className='container1'>
-        <Sidebar users={users} onUserClick={handleUserClick}/>
+        <Sidebar users={users} setUsers={setUsers} onUserClick={handleUserClick}/>
         {selectedUser && (
-        <Chat users={users} setUsers={setUsers} user={selectedUser} roomId={currentUser.id > selectedUser.id ? currentUser.id  + "_" + selectedUser.id : selectedUser.id + "_" + currentUser.id}/>)}
+        <Chat users={users} setUsers={setUsers} user={selectedUser} roomId={currentUser.id > selectedUser.id ? currentUser.id  + "_" + selectedUser.id : selectedUser.id + "_" + currentUser.id} socket={socket}/>)}
       </div>
     </div>
   )

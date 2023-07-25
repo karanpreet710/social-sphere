@@ -4,14 +4,11 @@ import Messages from '../messages/Messages'
 import Input from "../input/Input"
 import { useState, useEffect } from 'react'
 import {makeRequest} from "../../axios"
-import io from "socket.io-client";
 import { AuthContext } from '../../context/authContext'
 import { v4 as uuidv4 } from 'uuid';
 import moment from 'moment'
 
-const socket = io("https://api-socialsphere.vercel.app")
-
-function Chat({users, setUsers, user, roomId}) {
+function Chat({users, setUsers, user, roomId, socket}) {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
   const {currentUser} = useContext(AuthContext)
@@ -33,7 +30,6 @@ function Chat({users, setUsers, user, roomId}) {
   socket.emit('joinRoom', roomId);
 
   socket.on('message', (message) => {
-    console.log(message)
     const userIndex = users.findIndex((u) => u.id === user.id);
 
     // If the user is found, update their latestMessage
@@ -66,7 +62,7 @@ function Chat({users, setUsers, user, roomId}) {
     // Leave the room when the component unmounts
     // socket.emit('leaveRoom', roomId);
   };
-},[currentUser.id, user.id, setUsers, users,roomId]);
+},[currentUser.id, user.id, setUsers, users,roomId, socket]);
 
   const upload = async (file) => {
     try {
@@ -80,6 +76,10 @@ function Chat({users, setUsers, user, roomId}) {
   };
 
   const sendMessage = async ({file,setFile}) => {
+    if(newMessage==='' && file===null)
+    {
+      return;
+    }
     let imgUrl = "";
     if (file) imgUrl = await upload(file);
     const message = {

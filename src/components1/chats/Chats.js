@@ -15,7 +15,7 @@ function Chats({users,onUserClick}) {
 
   return (
     <div className='chats'>
-      {sortedUsers.map((user)=>{
+      {sortedUsers.length>0 ? (sortedUsers.map((user)=>{
         return <div className='userChat' key={user.id} onClick={()=>onUserClick(user)}>
                 <img src={user.profilePic} alt=""></img>
                 <div className='userChatInfo'>
@@ -23,7 +23,7 @@ function Chats({users,onUserClick}) {
                   <p>{user.latestMessage!==null && user.latestMessage !== '' ? user.latestMessage : user.image!=null ? "Image" : ""}</p>
                 </div>
               </div>
-      })}
+      })) : <p style={{color:"white", marginLeft:"10px"}}>No such username found...</p>}
     </div>
   )
 }
