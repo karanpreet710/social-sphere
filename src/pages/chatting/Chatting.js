@@ -6,7 +6,7 @@ import { makeRequest } from '../../axios';
 import { AuthContext } from '../../context/authContext';
 import io from "socket.io-client"
 
-const socket = io("https://api-socialsphere.vercel.app")
+const socket = io("https://api-socialsphere.onrender.com")
 
 
 function Chatting() {

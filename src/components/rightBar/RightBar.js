@@ -17,7 +17,7 @@ const RightBar = () => {
       setOnlineFriends(data.data.users);
     }
     fetchData();
-    socket = io('https://api-socialsphere.vercel.app');
+    socket = io('https://api-socialsphere.onrender.com');
 
     socket.on('connect', () => {
       socket.emit('online', currentUser);

@@ -22,7 +22,7 @@ function Register({setCreateNew}) {
     e.preventDefault();
     try{
       // await axios.post("https://api-socialsphere.vercel.app/api/auth/register",inputs)
-      await axios.post("https://api-socialsphere.vercel.app/api/auth/register",inputs)
+      await axios.post("https://api-socialsphere.onrender.com/api/auth/register",inputs)
     }catch(err){
       setErr(err.response.data);
     }
